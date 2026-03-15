@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# 临时文件
+*.tmp
+*.temp
+*.log
+*.bak
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE 配置
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 测试和覆盖率
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 虚拟环境
+venv/
+env/
+ENV/
+
+# Trae 规范和示例目录
+.trae/
+example/
+
+# ============================================
+# 学习记录同步配置
+# ============================================
+# 默认：上传学习记录到 GitHub（推荐，便于跨设备同步）
+# 如需排除学习记录，取消下面两行的注释：
+# .learnings/
+# !.learnings/LEARNINGS.md
+
+# 如需排除错误记录（可能含敏感信息），取消下面这行的注释：
+.learnings/ERRORS.md
