@@ -2,19 +2,11 @@
 name: hy-skill
 description: |
   工作流平台智能助手，提供 Python 代码生成、工作流搭建、Agent 提示词设计、工作流识别和工作流文档阅读修改五大核心能力。
-
-  Use this skill when:
-  - Python 代码生成: "利用 hy-skill 技能编写 python 技能代码"、"python 代码"、"代码生成"、"写脚本"
-  - 工作流搭建: "使用 hy-skill 进行工作流搭建"、"工作流"、"搭建流程"、"配置流程"
-  - Agent 提示词: "使用 hy-skill 设计 agent 实现"、"提示词"、"agent 设置"、"角色配置"
-  - 工作流识别: "工作流识别"、"识别工作流截图"、"分析工作流截图"、"截图识别"
-  - 工作流文档阅读: "阅读工作流文档"、"分析工作流文档"、"读取工作流文档"、"修改工作流文档"
-
-  Triggers: Python代码、工作流搭建、Agent设计、工作流识别、代码生成、提示词设计、工作流文档阅读
+  Invoke when: Python 代码生成、工作流搭建、Agent 设计、工作流识别、代码生成、提示词设计、工作流文档阅读
 version: 1.1.0
 author: hyt
 license: MIT
-repository: https://github.com/hyt/hy-skill
+repository: https://github.com/superhyt666/trae-skills
 allowed-tools:
   - Read
   - Write
