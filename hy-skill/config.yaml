@@ -1,0 +1,133 @@
+# hy-skill 配置文件
+
+# Skill 基本信息
+skill:
+  name: hy-skill
+  version: 1.0.0
+  description: 工作流平台智能助手
+
+# 模块配置
+modules:
+  python_codegen:
+    enabled: true
+    priority: 1
+    triggers:
+      - "利用 hy-skill 技能编写 python 技能代码"
+      - "python 代码"
+      - "代码生成"
+      - "写脚本"
+    reference: references/python-standards.md
+
+  workflow_setup:
+    enabled: true
+    priority: 2
+    triggers:
+      - "使用 hy-skill 进行工作流搭建"
+      - "工作流"
+      - "搭建流程"
+      - "配置流程"
+    reference: references/workflow-setup.md
+    required_reading:
+      - references/workflow-node-variable-mapping.md
+
+  agent_prompts:
+    enabled: true
+    priority: 3
+    triggers:
+      - "使用 hy-skill 设计 agent 实现"
+      - "提示词"
+      - "agent 设置"
+      - "角色配置"
+    reference: references/agent-prompts.md
+
+  workflow_recognition:
+    enabled: true
+    priority: 4
+    triggers:
+      - "工作流识别"
+      - "识别工作流截图"
+      - "分析工作流截图"
+      - "截图识别"
+      - "识别这个工作流"
+    reference: references/workflow-recognition.md
+    input_methods:
+      screenshot:
+        name: "截图识别"
+        description: "通过上传工作流截图进行识别"
+        trigger_keywords:
+          - "截图"
+          - "上传截图"
+      flow_file:
+        name: ".flow文件识别"
+        description: "通过上传或选择本地.flow文件进行识别"
+        trigger_keywords:
+          - ".flow"
+          - "flow文件"
+          - "上传flow"
+        integration:
+          skill: "flow-to-markdown"
+          script: ".trae/skills/flow-to-markdown/scripts/convert_flow.py"
+          output_format: "markdown"
+
+# 节点类型配置
+node_types:
+  calling:
+    reference: references/workflow-nodes-calling.md
+    nodes:
+      - Agent
+      - Python代码执行
+      - LLM
+      - HTTP技能
+
+  control:
+    reference: references/workflow-nodes-control.md
+    nodes:
+      - 条件判断
+      - 循环处理
+      - 并行处理
+
+  ai:
+    reference: references/workflow-nodes-ai.md
+    nodes:
+      - 图像生成
+      - 语音识别
+      - 语音合成
+
+  knowledge:
+    reference: references/workflow-nodes-knowledge.md
+    nodes:
+      - 添加知识
+      - 知识问答
+      - 知识检索
+
+  table:
+    reference: references/workflow-nodes-table.md
+    nodes:
+      - 智能表格检索
+      - 写入智能表格
+
+  text:
+    reference: references/workflow-nodes-text.md
+    nodes:
+      - 关键词识别
+      - Json解析
+      - 数据类型转换
+
+# 设计模式
+patterns:
+  design_philosophy:
+    reference: references/design-philosophy.md
+    principle: 任务拆解
+
+  retrieval_augmented:
+    reference: references/retrieval-augmented-pattern.md
+    principle: 先缩小范围再让LLM处理
+
+  template_lookup:
+    reference: references/template-lookup-pattern.md
+    principle: 预定义模板优于动态生成
+
+# 日志配置
+logging:
+  enabled: true
+  level: INFO
